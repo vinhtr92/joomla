@@ -48,6 +48,13 @@
 		<position>footer-2</position>
 		<position>footer-3</position>
 		<position>footer-4</position>
+
+		<position>feature-1</position>
+		<position>feature-2</position>
+		<position>feature-3</position>
+		<position>feature-4</position>
+
+
 	</positions>
 	<languages folder="language">
 		<language tag="en-GB">en-GB/en-GB.tpl_protostar.ini</language>

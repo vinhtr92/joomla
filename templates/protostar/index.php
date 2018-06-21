@@ -176,6 +176,24 @@ else
 			<?php endif; ?>
 			<jdoc:include type="modules" name="banner" style="xhtml" />
 			<div class="row-fluid">
+				<jdoc:include type="modules" name="position-4" style="none" />
+
+			</div>	
+
+			<div class="row-fluid">
+				<!-- <jdoc:include type="modules" name="position-5" style="none" />
+				<jdoc:include type="modules" name="position-6" style="none" /> -->
+				<div class="span4">
+					<jdoc:include type="modules" name="feature-1" style="none" />
+				</div>
+				<div class="span4">
+					<jdoc:include type="modules" name="feature-2" style="none" />
+				</div>
+				<div class="span4">
+					<jdoc:include type="modules" name="feature-3" style="none" />
+				</div>
+			</div>
+			<div class="row-fluid">
 				<?php if ($position8ModuleCount) : ?>
 					<!-- Begin Sidebar -->
 					<div id="sidebar" class="span3">
