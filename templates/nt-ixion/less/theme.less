@@ -1,0 +1,601 @@
+@import "uikit/uikit.less";
+@import "norrtheme/mixins.less";
+@import "norrtheme/helpers.less";
+
+/* ========================================================================
+   Warp theme
+ ========================================================================== */
+// Variables
+// ==========================================================================
+
+@theme_global-body-style : 'default';
+@global-background : #E8E3E3;
+@theme_global-toolbar-background : rgba(0, 0, 0, .85);
+@theme_global-toolbar-color : #FFF;
+@theme_global-toolbar-link-color : #FFF;
+@theme_global-toolbar-link-hover-color : #FFF;
+@theme_global-showcase-background : rgba(0, 0, 0, .65);
+@theme_global-showcase-color : #FFF;
+@theme_global-main-body-color : #FFF;
+@theme_global-headerbar-top-color : #E5E1DF;
+@theme_global-headerbar-bottom-color : #F0EDED;
+
+@theme_global-header-background : transparent;
+@theme_global-header-border-color : rgba(0, 0, 0, .12);
+
+@theme_global-footer-link-color : #808080;
+@theme_global-footer-link-hover-color : #202020;
+
+@theme_global-header-height : 53px;
+
+/* Layout
+ ========================================================================== */
+
+/*
+ * Force vertical scrollbar
+ */
+
+html {
+  overflow-y : scroll;
+}
+
+/*
+ * Logo small
+ * Remove whitespace caused by vertical centering to prevent logo wrapping into the next line
+ */
+
+.tm-logo-small {
+  letter-spacing : -0.31em;
+}
+
+/*
+ * Toolbar
+ */
+
+.tm-toolbar {
+  background : @theme_global-toolbar-background;
+  color      : @theme_global-toolbar-color;
+  .uk-panel-title {
+	color : @theme_global-toolbar-color;
+  }
+  .uk-float-left .uk-panel {
+	margin : 0 @global-grid-gutter 0 0;
+	float  : left;
+  }
+
+  .uk-float-right .uk-panel {
+	margin : 0 0 0 @global-grid-gutter;
+	float  : right;
+  }
+  a {
+	color : @theme_global-toolbar-link-color;
+	&:hover,
+	&:active {
+	  color : @theme_global-toolbar-link-hover-color;
+	}
+  }
+  // Link
+  .uk-subnav > li > a {
+	font-size   : 13px;
+	text-shadow : 0 1px 1px rgba(0, 0, 0, .5);
+	&:hover {
+	  text-decoration : underline;
+	}
+	&:active {
+	  text-decoration : underline;
+	}
+  }
+  .uk-container {
+	padding-top    : 5px;
+	padding-bottom : 8px;
+  }
+  .uk-container--toolbar-block {
+	padding-top : 10px;
+  }
+}
+
+/*
+ * Headerbar
+ */
+.tm-header {
+  position                : relative;
+  background              : @theme_global-header-background url(../images/background/background.jpg) center 84% no-repeat;
+  -webkit-background-size : cover;
+  background-size         : cover;
+  &:after {
+	content    : '';
+	position   : absolute;
+	z-index    : 1;
+	bottom     : 0;
+	left       : 0;
+	right      : 0;
+	height     : 1px;
+	background : @theme_global-header-border-color;
+  }
+}
+
+.tm-headerbar {
+  margin-top       : @global-grid-gutter;
+  padding          : @global-grid-gutter;
+  border-radius    : 6px 6px 0 0;
+  .box-shadow(~"0px 1px 0px rgba(255, 255, 255, 0.75) inset, 0px 0px 1px rgba(0, 0, 0, 0.35)");
+  background-color : @theme_global-headerbar-bottom-color;
+  .background-image(~"linear-gradient(bottom, @{theme_global-headerbar-top-color} 0%, @{theme_global-headerbar-bottom-color} 100%)");
+  position         : relative;
+  z-index          : 50;
+  &-logo {
+	display        : inline-block;
+	vertical-align : middle;
+	margin-right   : @global-grid-gutter;
+  }
+  &-nav {
+	display        : inline-block;
+	vertical-align : middle;
+  }
+  &-search {
+	display        : inline-block;
+	vertical-align : middle;
+  }
+  .uk-panel {
+	max-width    : 300px;
+	margin-right : 0;
+	float        : right;
+  }
+}
+
+.tm-navbar {
+  & > .uk-vertical-align-middle {
+	min-width : 100%;
+  }
+}
+
+/*
+ * Showcase
+ */
+
+.tm-theme-showcase {
+  position : relative;
+  padding  : @global-grid-gutter;
+  color    : @theme_global-showcase-color;
+  &-bg-module {
+	background : @theme_global-showcase-background;
+	position   : absolute;
+	z-index    : 1;
+	bottom     : 0;
+	top        : 0;
+	left       : @global-grid-gutter;
+	right      : 0;
+	margin-top : 0;
+  }
+  &-bg {
+	background : @theme_global-showcase-background;
+	position   : absolute;
+	z-index    : 1;
+	bottom     : 0;
+	top        : 0;
+	left       : 0;
+	right      : 0;
+  }
+  > div,
+  > ul,
+  > section {
+	position : relative;
+	z-index  : 5;
+  }
+  h1, h2, h3, h4, h5, h6 {
+	color : @theme_global-showcase-color;
+  }
+  > .uk-grid:not(.uk-grid-preserve) > * {
+	padding-left : 0 !important;
+  }
+  &.tm-breadcrumbs {
+	padding-top    : 8px;
+	padding-bottom : 8px;
+	ul {
+	  margin : 0;
+	}
+  }
+  .uk-panel-box,
+  .uk-panel-box .uk-panel-title {
+	color : @theme_global-showcase-color;
+  }
+}
+
+/*
+ * Top-a
+ */
+
+.tm-top-a {
+  ~ .tm-breadcrumbs {
+	margin-top     : -(@global-grid-gutter/2);
+	padding-top    : 0;
+	padding-bottom : 10px;
+	.tm-theme-showcase-bg {
+	  top : (@global-grid-gutter/2);
+	}
+  }
+}
+
+/*
+ * Breadcrumbs
+ */
+
+.tm-breadcrumbs {
+  color : #FFF;
+  a {
+	color       : #FFF;
+	font-size   : 13px;
+	text-shadow : 0 1px 1px rgba(0, 0, 0, .5);
+	&:hover {
+	  text-decoration : underline;
+	  color           : #FFF;
+	}
+	&:active {
+	  text-decoration : underline;
+	  color           : #FFF;
+	}
+  }
+  .uk-active {
+	font-weight : 700;
+  }
+}
+
+/*
+ * Main Text
+ */
+
+.tm-theme-maintext {
+  border           : 1px solid rgba(0, 0, 0, .08);
+  border-top       : 0;
+  background-color : @theme_global-main-body-color;
+  .br(0 0 6px 6px);
+  .bshadow;
+  .clip;
+  > .tm-main-box:first-child {
+	padding-top : @global-grid-gutter;
+  }
+  > .tm-main-box:last-child {
+	border-bottom : 0;
+	.br(0 0 6px 6px);
+	.tm-gradient-line {
+	  display : none;
+	}
+  }
+}
+
+.tm-main-box {
+  padding  : 0 @global-grid-gutter @global-grid-gutter @global-grid-gutter;
+  position : relative;
+  > div,
+  > aside {
+	z-index  : 5;
+	position : relative;
+  }
+}
+
+.tm-gradient-line {
+  left          : @global-grid-gutter;
+  right         : 0;
+  bottom        : 0;
+  z-index       : 1;
+  min-height    : 230px !important;
+  position      : absolute;
+  border-bottom : 1px solid darken(@theme_global-main-body-color, 12%);
+  .background-image(~"linear-gradient(bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,.04) 4.35%, rgba(0,0,0,0) 100%)");
+}
+
+/*
+ * Middle
+ */
+
+.tm-main > :nth-child(n+2) {
+  margin-top : @global-grid-gutter;
+}
+
+.tm-content > :last-child {
+  margin-bottom : 0;
+}
+
+/*
+ * Footer
+ */
+
+.tm-footer {
+  position      : relative;
+  text-align    : center;
+  margin-top    : @global-grid-gutter;
+  margin-bottom : @global-grid-gutter;
+  .uk-panel + .uk-panel {
+	margin-top : @global-grid-gutter;
+  }
+  .uk-container {
+	position : relative;
+  }
+  &-pos {
+	text-align    : left;
+	margin-bottom : @global-grid-gutter;
+	.uk-panel-title {
+	  font-weight : 700;
+	}
+	.uk-subnav > li > a,
+	a {
+	  color : @theme_global-footer-link-color;
+	  &:hover,
+	  &.uk-active {
+		text-decoration : none;
+		color           : @theme_global-footer-link-hover-color;
+	  }
+	}
+	.uk-subnav > li.uk-active a {
+	  text-decoration : none;
+	  color           : @theme_global-footer-link-color;
+	}
+  }
+}
+
+/*
+ * To-top scroller
+ */
+
+.tm-totop-scroller {
+  display            : block;
+  position           : absolute;
+  top                : 0;
+  right              : 35px;
+  z-index            : @global-z-index;
+  width              : 20px;
+  height             : 20px;
+  line-height        : 20px;
+  font-size          : 14px;
+  color              : @global-color;
+  text-align         : center;
+  -webkit-transition : all linear 0.05s;
+  transition         : all linear 0.05s;
+}
+
+.tm-totop-scroller:after {
+  content     : "\f077";
+  font-family : "FontAwesome";
+}
+
+/*
+ * Hover
+ * 1. Apply hover style also to focus state
+ * 2. Remove default focus style
+ */
+
+.tm-totop-scroller:hover,
+.tm-totop-scroller:focus { /* 1 */
+  color           : lighten(@global-color, 20%);
+  font-size       : 16px;
+  outline         : none; /* 2 */
+  text-decoration : none;
+}
+
+/* Active */
+.tm-totop-scroller:active {
+  color     : darken(@global-color, 20%);
+  font-size : 11px;
+}
+
+/* Blog
+ ========================================================================== */
+
+/*
+ * Leading article
+ * Joomla only
+ */
+
+.tm-leading-article .uk-article:last-child {
+  padding-bottom : @article-margin-top;
+  border-bottom  : 1px solid @base-hr-border;
+}
+
+.edit-link {
+  display        : inline-block;
+  vertical-align : top;
+  margin-left    : 10px;
+  span {
+	margin-right : 5px;
+  }
+  &:first-child {
+	margin-left : 0;
+  }
+}
+
+/* Error
+ ========================================================================== */
+
+.tm-error-icon {
+  font-size : 250px;
+}
+
+.tm-error-headline {
+  font-size : 100px;
+}
+
+/* Offline
+ ========================================================================== */
+
+.tm-offline {
+  width : 300px;
+}
+
+/* Socialbuttons
+ ========================================================================== */
+
+.tm-socialbuttons > div {
+  margin-right : 10px;
+  float        : left;
+}
+
+/* WordPress only
+ ========================================================================== */
+
+.alignleft {
+  display      : block;
+  margin-right : @utility-align-horizontal;
+  float        : left;
+}
+
+.alignright {
+  display     : block;
+  margin-left : @utility-align-horizontal;
+  float       : right;
+}
+
+.aligncenter {
+  display      : block;
+  margin-left  : auto;
+  margin-right : auto;
+}
+
+/* Theme Helper
+========================================================================== */
+
+.tm-button-teaser {
+  min-width : 250px;
+}
+
+.tm-phone-demo {
+  position       : absolute;
+  max-width      : 50%;
+  vertical-align : bottom;
+  bottom         : -@global-grid-gutter;
+  right          : -@global-grid-gutter;
+}
+
+.tm-screen-demo {
+  background-position : 100% 0;
+  background-repeat   : no-repeat;
+  bottom              : -21px;
+  position            : relative;
+  margin-left         : -35px;
+  &-wrap {
+	overflow : hidden;
+  }
+}
+
+/* Breakpoint
+========================================================================== */
+
+/* Only large screens */
+@media (min-width : @breakpoint-xlarge) {
+  .tm-headerbar {
+	margin-top : @global-grid-gutter-large;
+	&-logo {
+	  margin-right : @global-grid-gutter-large;
+	}
+  }
+
+  .tm-theme-showcase {
+	padding : @global-grid-gutter-large;
+	&-bg-module {
+	  left : @global-grid-gutter-large;
+	  top  : 0;
+	}
+  }
+
+  .tm-footer {
+	margin-top    : @global-grid-gutter-large;
+	margin-bottom : @global-grid-gutter-large;
+	&-pos {
+	  margin-bottom : @global-grid-gutter-large;
+	}
+  }
+
+  .tm-main-box {
+	padding : 0 @global-grid-gutter-large @global-grid-gutter-large @global-grid-gutter-large;
+  }
+
+  .tm-theme-main-color {
+	> .tm-main-box:first-child {
+	  padding-top : @global-grid-gutter-large;
+	}
+	> .tm-main-box:last-child {
+	  padding-bottom : @global-grid-gutter-large;
+	}
+  }
+
+  .tm-gradient-line {
+	left : @global-grid-gutter-large;
+  }
+
+  .tm-top-a {
+	~ .tm-breadcrumbs {
+	  margin-top     : -(@global-grid-gutter-large/2);
+	  padding-top    : 0;
+	  padding-bottom : 15px;
+	  .tm-theme-showcase-bg {
+		top : (@global-grid-gutter-large/2);
+	  }
+	}
+  }
+
+  .tm-phone-demo {
+	max-width : 100%;
+	bottom    : -@global-grid-gutter-large;
+	right     : -@global-grid-gutter-large;
+  }
+
+}
+
+/* Only tablet */
+@media (max-width : @breakpoint-large) {
+  .tm-screen-demo {
+	background-position     : 100% 0;
+	-webkit-background-size : 160%;
+	background-size         : 160%;
+	bottom                  : 0;
+  }
+}
+
+/* Only phones */
+@media (max-width : @breakpoint-small-max) {
+
+  .uk-container {
+	padding : 0px @global-mini-margin;
+  }
+
+  .tm-headerbar {
+	padding      : @global-mini-margin;
+	border-width : 0 0 1px 0;
+	.uk-navbar-toggle {
+	  margin-left : @global-mini-margin;
+	}
+  }
+
+  .tm-navbar {
+	&:before {
+	  display : none;
+	}
+  }
+
+  .tm-header-logo-small {
+	height  : auto;
+	padding : 10px;
+  }
+
+  .tm-logo-small:hover {
+	text-decoration : none;
+  }
+
+;
+
+  .tm-navbar:not(.uk-navbar-attached) {
+	border-radius : 0;
+  }
+
+  .tm-screen-demo {
+	background-position     : center 0;
+	-webkit-background-size : contain;
+	background-size         : contain;
+	bottom                  : 0;
+	min-height              : 150px !important;
+	margin-left             : 15px;
+	margin-bottom           : 15px;
+	&-wrap {
+	  overflow : visible;
+	}
+  }
+}

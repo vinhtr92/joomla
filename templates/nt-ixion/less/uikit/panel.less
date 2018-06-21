@@ -1,0 +1,92 @@
+//
+// Component: Panel
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@panel-title-margin-bottom:                     @global-margin;
+@panel-title-font-size:                         round((@global-font-size * 1.28)); // 18px / 20px
+@panel-title-line-height:                       round((@panel-title-font-size * 1.32)); // 24px / 26px
+@panel-title-color:                             @global-color;
+
+@panel-box-padding:                             @global-margin;
+@panel-box-color:                               @global-color;
+@panel-box-title-color:                         @global-color;
+@panel-box-badge-right:                         @panel-box-badge-top;
+@panel-hover-padding:                           @global-margin;
+@panel-hover-color:                             @global-color;
+@panel-hover-hover-color:                       @global-color;
+
+@panel-box-primary-background:                  @global-color;
+@panel-box-primary-color:                       @global-color;
+@panel-box-primary-title-color:                 @global-color;
+@panel-box-primary-border-color:                rgba(45,112,145,.3);
+
+@panel-box-secondary-background:                #f5f5f5;
+@panel-box-secondary-color:                     @global-color;
+@panel-box-secondary-border-color:              darken(@panel-box-secondary-background,5%);
+@panel-box-secondary-title-color:               @global-color;
+
+@panel-header-title-border:                     @global-border;
+@panel-header-title-color:                      @global-color;
+
+@panel-divider-gutter:                          @global-grid-gutter;
+@panel-divider-gutter-large:                    @global-grid-gutter-large;
+@panel-divider-border:                          @global-border;
+
+
+// Sub-object: `uk-panel-title`
+// ========================================================================
+
+.hook-panel-title() {}
+
+
+// Sub-object: `uk-panel-badge`
+// ========================================================================
+
+.hook-panel-badge() {
+	right: 0;
+}
+
+
+// Modifier: `uk-panel-box`
+// ========================================================================
+
+.hook-panel-box() {
+	padding: 0;
+	background: 0;
+	border-radius: @global-border-radius;
+}
+
+//
+// Sub-modifier: `uk-panel-box-primary`
+//
+
+.hook-panel-box-primary() {
+	padding: @panel-box-padding;
+	border: 1px solid @panel-box-primary-border-color;
+}
+
+//
+// Sub-modifier: `uk-panel-box-secondary`
+//
+
+.hook-panel-box-secondary() {
+	padding: @panel-box-padding;
+	border: 1px solid @panel-box-secondary-border-color;
+}
+
+
+// Modifier: `uk-panel-header`
+// ========================================================================
+
+.hook-panel-header() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-panel-misc() {}

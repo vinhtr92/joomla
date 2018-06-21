@@ -1,0 +1,251 @@
+//
+// Component: Button
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@button-height:                                 @global-height;
+@button-mini-height:                            @global-height-mini;
+@button-small-height:                           @global-height-small;
+@button-large-height:                           @global-height-large;
+
+@button-line-height:                            @global-height;
+@button-mini-line-height:                       @global-height-mini;
+@button-small-line-height:                      @global-height-small;
+@button-large-line-height:                      @global-height-large;
+
+@button-mini-font-size:                         round((@global-font-size * 0.78)); // 11px / 12px
+@button-small-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
+@button-large-font-size:                        round((@global-font-size * 1.14)); // 16px / 18px
+
+// Standard
+@button-background:                             #eee;
+@button-stop-gradient:                          #e1dfdf;
+@button-color:                                  #444;
+@button-border-color:                           #d9d8d8;
+@button-shadow:                                 #f7f6f6;
+
+@button-hover-background:                       @button-background;
+@button-hover-color:                            @button-color;
+@button-hover-border-color:                     #d2d1d1;
+@button-hover-shadow:                           #d9d8d8;
+
+@button-active-background:                      @button-background;
+@button-active-color:                           @button-color;
+@button-active-border-color:                    #cbcbcb;
+
+
+// Primary
+@button-primary-background:                     #00a8e6;
+@button-primary-stop-gradient:                  #0094ca;
+@button-primary-border-color:                   #0487B7;
+@button-primary-color:                          #fff;
+@button-primary-shadow:                         #1ab8f3;
+
+@button-primary-hover-background:               #35b3ee;
+@button-primary-hover-stop-gradient:            #3499d1;
+@button-primary-hover-color:                    #fff;
+@button-primary-hover-border-color:             #1697d4;
+@button-primary-hover-shadow:                   #6ccbf7;
+
+@button-primary-active-background:              #0487B7;
+@button-primary-active-stop-gradient:           #00a8e6;
+@button-primary-active-color:                   #fff;
+@button-primary-active-border-color:            #026387;
+@button-primary-active-shadow:                  #07a2da;
+
+
+// Success
+@button-success-background:                     #8cc14c;
+@button-success-stop-gradient-color:            #65C12C;
+@button-success-color:                          #fff;
+@button-success-border-color:                   #76aa39;
+@button-success-shadow-color:                   #9fd064;
+
+@button-success-hover-background:               #8ec73b;
+@button-success-hover-stop-gradient-color:            #6BAF37;
+@button-success-hover-color:                    #fff;
+@button-success-hover-border-color:             #6f9e2b;
+@button-success-hover-shadow-color:                   #c7e39d;
+
+@button-success-active-background:              #65C12C;
+@button-success-active-stop-gradient:           #8cc14c;
+@button-success-active-color:                   #fff;
+@button-success-active-border-color:            #498e1f;
+@button-success-active-shadow-color:            #a4e17f;
+
+// Danger
+@button-danger-background:                     #da314b;
+@button-danger-stop-gradient-color:            #BD123D;
+@button-danger-color:                          #fff;
+@button-danger-border-color:                   #bf2139;
+@button-danger-shadow-color:                   #e54d64;
+
+@button-danger-hover-background:               #e4354f;
+@button-danger-hover-stop-gradient-color:      #C5344B;
+@button-danger-hover-color:                    #fff;
+@button-danger-hover-border-color:             #be1b33;
+@button-danger-hover-shadow-color:             #ed7889;
+
+@button-danger-active-background:              #BD123D;
+@button-danger-active-stop-gradient-color:     #da314b;
+@button-danger-active-color:                   #fff;
+@button-danger-active-border-color:            #830b2a;
+@button-danger-active-shadow-color:            #df6382;
+
+// Disabled
+@button-disabled-background:                    #f5f5f5;
+@button-disabled-color:                         #999;
+
+@button-link-color:                             #07D;
+@button-link-hover-color:                       #059;
+@button-link-hover-text-decoration:             underline;
+@button-link-disabled-color:                    #999;
+
+
+// Component
+// ========================================================================
+
+
+.hook-button() {
+	border: 1px solid @button-border-color;
+	border-radius: @global-border-radius;
+	background-image: -webkit-linear-gradient(top,@button-background,@button-stop-gradient);
+	background-image: linear-gradient(to bottom,@button-background,@button-stop-gradient);
+	box-shadow: inset 0 1px 0 0 @button-shadow;
+}
+
+.hook-button-hover() {
+	border-color: @button-hover-border-color;
+	box-shadow: inset 0 0 7px 0 @button-hover-shadow;
+}
+
+.hook-button-active() {
+	border-color: @button-active-border-color;
+	box-shadow: inset 0 0 10px 0 @button-hover-shadow;
+}
+
+
+// Color modifiers
+// ========================================================================
+
+//
+// Modifier: `uk-button-primary`
+//
+
+.hook-button-primary() {
+	border: 1px solid @button-primary-border-color;
+	background-image: -webkit-linear-gradient(top,@button-primary-background,@button-primary-stop-gradient);
+	background-image: linear-gradient(to bottom,@button-primary-background,@button-primary-stop-gradient);
+	box-shadow: inset 0 1px 0 0 @button-primary-shadow;
+}
+
+.hook-button-primary-hover() {
+	border-color: @button-primary-hover-border-color;
+	background-image: -webkit-linear-gradient(top,@button-primary-hover-background,@button-primary-hover-stop-gradient);
+	background-image: linear-gradient(to bottom,@button-primary-hover-background,@button-primary-hover-stop-gradient);
+	box-shadow: inset 0 1px 0 0 @button-primary-hover-shadow;
+}
+.hook-button-primary-active() {
+	border-color: @button-primary-active-border-color;
+	background-image: -webkit-linear-gradient(top,@button-primary-active-background,@button-primary-active-stop-gradient);
+	background-image: linear-gradient(to bottom,@button-primary-active-background,@button-primary-active-stop-gradient);
+	box-shadow: inset 0 1px 0 0 @button-primary-active-shadow;
+}
+
+//
+// Modifier: `uk-button-success`
+//
+
+.hook-button-success() {
+	border: 1px solid @button-success-border-color;
+	background-image: -webkit-linear-gradient(top,@button-success-background,@button-success-stop-gradient-color);
+	background-image: linear-gradient(to bottom,@button-success-background,@button-success-stop-gradient-color);
+	box-shadow: inset 0 1px 0 0 @button-success-shadow-color;
+}
+
+.hook-button-success-hover() {
+	border-color: @button-success-hover-border-color;
+	background-image: -webkit-linear-gradient(top,@button-success-hover-background,@button-success-hover-stop-gradient-color);
+	background-image: linear-gradient(to bottom,@button-success-hover-background,@button-success-hover-stop-gradient-color);
+	box-shadow: inset 0 1px 0 0 @button-success-hover-shadow-color;
+}
+.hook-button-success-active() {
+	border-color: @button-success-active-border-color;
+	background-image: -webkit-linear-gradient(top,@button-success-active-background,@button-success-active-stop-gradient);
+	background-image: linear-gradient(to bottom,@button-success-active-background,@button-success-active-stop-gradient);
+	box-shadow: inset 0 1px 0 0 @button-success-active-shadow-color;
+}
+
+//
+// Modifier: `uk-button-danger`
+//
+
+.hook-button-danger() {
+	border: 1px solid @button-danger-border-color;
+	background-image: -webkit-linear-gradient(top,@button-danger-background,@button-danger-stop-gradient-color);
+	background-image: linear-gradient(to bottom,@button-danger-background,@button-danger-stop-gradient-color);
+	box-shadow: inset 0 1px 0 0 @button-danger-shadow-color;
+}
+
+.hook-button-danger-hover() {
+	border-color: @button-danger-hover-border-color;
+	background-image: -webkit-linear-gradient(top,@button-danger-hover-background,@button-danger-hover-stop-gradient-color);
+	background-image: linear-gradient(to bottom,@button-danger-hover-background,@button-danger-hover-stop-gradient-color);
+	box-shadow: inset 0 1px 0 0 @button-danger-hover-shadow-color;
+}
+
+.hook-button-danger-active() {
+	border-color: @button-danger-active-border-color;
+	background-image: -webkit-linear-gradient(top,@button-danger-active-background,@button-danger-active-stop-gradient-color);
+	background-image: linear-gradient(to bottom,@button-danger-active-background,@button-danger-active-stop-gradient-color);
+	box-shadow: inset 0 1px 0 0 @button-danger-active-shadow-color;
+}
+
+
+// Disabled state
+// ========================================================================
+
+.hook-button-disable() {}
+
+
+// Modifier: `uk-button-link`
+// ========================================================================
+
+.hook-button-link() {
+	box-shadow:0 0 0 rgba(0,0,0,0);
+}
+
+
+// Size modifiers
+// ========================================================================
+
+.hook-button-large() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-button-misc() {
+	.uk-button-group>.uk-button:first-child,
+	.uk-button-group>div:first-child .uk-button {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+	.uk-button-group>.uk-button:not(:first-child):not(:last-child),
+	.uk-button-group>div:not(:first-child):not(:last-child) .uk-button {
+		border-radius: 0;
+	}
+	.uk-button-group>.uk-button:nth-child(n+2),
+	.uk-button-group>div:nth-child(n+2) .uk-button {
+		margin-left: -1px;
+	}
+	.uk-button-group>.uk-button:last-child,
+	.uk-button-group>div:last-child .uk-button {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}

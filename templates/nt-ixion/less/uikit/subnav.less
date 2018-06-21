@@ -1,0 +1,85 @@
+
+//
+// Component: Subnav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@subnav-color:                                  @global-color;
+@subnav-hover-color:                            @global-link-color;
+@subnav-active-color:                           @global-link-color;
+
+@subnav-line-border:                            @global-border;
+
+@subnav-pill-hover-color:                       @global-color;
+@subnav-pill-active-background:                 #00a8e6;
+@subnav-pill-active-color:                      #fff;
+@subnav-pill-active-border-color:               #0487B7;
+
+// Component
+// ========================================================================
+
+.hook-subnav() {}
+
+.hook-subnav-hover() {}
+
+.hook-subnav-active() {}
+
+//
+// Items
+//
+
+.hook-subnav-item() {}
+
+// Link
+.hook-subnav-link() {}
+
+.hook-subnav-link-hover() {}
+
+// Active
+.hook-subnav-active() {}
+
+// Disabled
+.hook-subnav-disabled() {}
+
+
+// Modifier: `uk-subnav-line'
+// ========================================================================
+
+.hook-subnav-line-divider() {}
+
+
+// Modifier: `uk-subnav-pill'
+// ========================================================================
+
+.hook-subnav-pill() {
+	border-radius: @global-border-radius;
+	border: 1px solid transparent;
+}
+
+// Hover
+.hook-subnav-pill-hover() {
+	border-color: @subnav-pill-hover-background;
+}
+
+// Active
+.hook-subnav-pill-active() {
+	border: 1px solid @subnav-pill-active-border-color;
+	background-image: -webkit-linear-gradient(top,@subnav-pill-active-background,mix(saturate(@subnav-pill-active-background, 9%), lighten(@subnav-pill-active-background, -11%)));
+	background-image: linear-gradient(to bottom,@subnav-pill-active-background,mix(saturate(@subnav-pill-active-background, 9%), lighten(@subnav-pill-active-background, -11%)));
+	box-shadow: inset 0 1px 0 0 mix(saturate(@subnav-pill-active-background, 8%), lighten(@subnav-pill-active-background, 15%));
+}
+
+// Disabled state
+// ========================================================================
+
+.hook-subnav-disabled() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-subnav-misc() {}

@@ -1,0 +1,83 @@
+//
+// Component: Dropdown
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@dropdown-z-index:                              @global-z-index + 20;
+@dropdown-color:                                @global-color;
+@dropdown-divider-border:                       @global-border;
+
+@dropdown-navbar-color:                         @global-color;
+@dropdown-animation:                            uk-slide-top-fixed;
+
+@dropdown-navbar-background:                    #444;
+@dropdown-navbar-color:                         #fff;
+@dropdown-navbar-animation:                     uk-slide-dropdown;
+@dropdown-divider-border:                       #ddd;
+@dropdown-divider-nav-border:                   #363636;
+
+@dropdown-search-shadow-color:                  rgba(0, 0, 0, 0.19);
+
+// Component
+// ========================================================================
+
+.hook-dropdown() {
+	border-radius: @global-border-radius;
+	border: 1px solid @panel-box-primary-border-color;
+}
+
+
+// Modifier: `uk-dropdown-navbar`
+// ========================================================================
+
+.hook-dropdown-navbar() {
+	border: 0;
+	margin-top: 12px;
+	left: 50%;
+	.br(@global-border-radius);
+	.box-shadow(~"0 0 35px rgba(0, 0, 0, 0.25)");
+	.transform(~"translateX(-50%)");
+	&:before {
+		content: '';
+		position: absolute;
+		top: -8px;
+		left: 50%;
+		margin-left: -4px;
+		width: 0px;
+		height: 0px;
+		border-width: 0 8px 8px 8px;
+		border-style: solid;
+		border-color: transparent transparent @dropdown-navbar-background;
+	}
+	a {
+		color: #FFF;
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+	.uk-form select, .uk-form textarea, .uk-form input:not([type]), .uk-form input[type="text"], .uk-form input[type="password"], .uk-form input[type="datetime"], .uk-form input[type="datetime-local"], .uk-form input[type="date"], .uk-form input[type="month"], .uk-form input[type="time"], .uk-form input[type="week"], .uk-form input[type="number"], .uk-form input[type="email"], .uk-form input[type="url"], .uk-form input[type="search"], .uk-form input[type="tel"], .uk-form input[type="color"] {
+		background: #353535;
+		border-color: #616161;
+		color: #D4D4D4;
+	}
+	.uk-dropdown:not(.uk-dropdown-stack) > .uk-grid > [class*='uk-width-']:nth-child(n+2) { border-left: @dropdown-divider-border-width solid @dropdown-divider-nav-border; }
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-dropdown-misc() {
+	.uk-dropdown-flip.uk-dropdown-search {
+		.br(0 0 @global-border-radius @global-border-radius);
+		background: @theme_global-headerbar-bottom-color;
+		border: 0;
+		padding: 0 15px;
+		.box-shadow(0px 0px 25px 0px rgba(0, 0, 0, 0.19));
+	}
+}

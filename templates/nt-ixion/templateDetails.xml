@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 1.7//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/1.7/template-install.dtd">
+<extension version="2.5" type="template" client="site" method="upgrade">
+	<name>nt-ixion</name>
+	<version>1.3.0</version>
+	<creationDate>Feb 2015</creationDate>
+	<author>NorrTheme</author>
+	<authorEmail>info@norrtheme.com</authorEmail>
+	<authorUrl>http://www.norrtheme.com</authorUrl>
+    <copyright>Copyright (C) NorrTheme</copyright>
+    <license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	<description><![CDATA[
+		<p>Looking for something modern, bright and universal? <b>Ixion</b> is a free Joomla template and Wordpress theme that can be used for building blog related website for travellers, upwardly urban persons or creative geeks :-) Don't think you need it? NT Ixion is a nice solution to be used for portfolio websites or small businesses since it's easy to output product images with effects or create a catalogue or do whatever else. Flexible structure of the template and module positions with different styles allows you to create any kind of website, that adapts to your needs - for example, a <b>blog Joomla template</b> with different layouts.</p>
+		<p>The template is based on cross-platform Warp 7 framework and brings all power of responsive design, so Ixion becomes more appealing and accessible on all modern mobile devices and gadgets and is compatible with two most popular Open Source CMS - Wordpress and Joomla.</p>
+		<p>Fast loading speed and good performance are very important, thus we use UiKit - a new light-weight framework allowing front-end styles looks much perfect. There are active CSS3 / HTML5 technologies which can be used as default and can be easily customized through the template back-end Customizer. Finally, you'll get LESS and compressed files at output to reduce the size.</p>
+		<p>Try the elegance of <b>Ixion template</b> right now!</p>
+	]]></description>
+	<files>
+		<filename>checksums</filename>
+		<filename>apple_touch_icon.png</filename>
+		<filename>CHANGELOG.md</filename>
+		<filename>component.php</filename>
+		<filename>config.php</filename>
+		<filename>config.xml</filename>
+		<filename>config.default.json</filename>
+		<filename>error.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.php</filename>
+		<filename>offline.php</filename>
+		<filename>raw.php</filename>
+		<filename>warp.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>layouts</folder>
+		<folder>less</folder>
+		<folder>warp</folder>
+	</files>
+    <positions>
+	    <position settings="">logo</position>
+	    <position settings="">logo-small</position>
+	    <position settings="">menu</position>
+	    <position>search</position>
+		<position>toolbar-block</position>
+	    <position>toolbar-l</position>
+	    <position>toolbar-r</position>
+	    <position>breadcrumbs</position>
+	    <position>top-a</position>
+	    <position>top-b</position>
+	    <position>bottom-a</position>
+	    <position>bottom-b</position>
+	    <position>main-top</position>
+	    <position>main-bottom</position>
+	    <position>sidebar-a</position>
+	    <position>sidebar-b</position>
+	    <position>footer</position>
+	    <position settings="">offcanvas</position>
+	    <position settings="">debug</position>
+    </positions>
+	<config>
+		<fields name="params" addfieldpath="/templates/nt-ixion/warp/systems/joomla/config/elements">
+			<fieldset name="options">
+		    	<field name="config" type="config" label="Config" description="" default="" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

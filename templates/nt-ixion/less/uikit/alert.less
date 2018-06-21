@@ -1,0 +1,48 @@
+//
+// Component: Alert
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@alert-margin-vertical:                         @global-margin;
+
+// Component
+// ========================================================================
+
+.hook-alert() {
+	border-radius: @global-border-radius;
+	border: 1px solid darken(@alert-background, 10%);
+}
+
+
+// Modifier: `uk-alert-success`
+// ========================================================================
+
+.hook-alert-success() {
+	border-color: darken(@alert-success-background, 20%);
+}
+
+
+// Modifier: `uk-alert-warning`
+// ========================================================================
+
+.hook-alert-warning() {
+	border-color: darken(@alert-warning-background, 30%);
+}
+
+
+// Modifier: `uk-alert-danger`
+// ========================================================================
+
+.hook-alert-danger() {
+	border-color: darken(@alert-danger-background, 10%);
+}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-alert-misc() {}

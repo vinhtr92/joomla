@@ -1,0 +1,224 @@
+//
+// Component: Nav
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@nav-header-padding-vertical:                   @nav-padding-vertical;
+@nav-header-padding-horizontal:                 @nav-padding-horizontal;
+@nav-header-font-size:                          round((@global-font-size * 0.85)); // 12px
+@nav-header-margin-top:                         @global-margin;
+
+@nav-divider-margin-horizontal:                 @nav-padding-horizontal;
+
+@nav-subtitle-font-size:                        round((@global-font-size * 0.85)); // 12px
+@nav-subtitle-line-height:                      round((@nav-subtitle-font-size * 1.5)); // 18px
+
+@nav-sub-padding-left:                          35px;
+
+@nav-parent-icon-width:                         @global-line-height;
+
+@nav-side-color:                                @global-color;
+@nav-side-hover-color:                          @global-color;
+@nav-side-active-background:                    #444;
+@nav-side-active-color:                         @global-contrast-color;
+@nav-side-header-color:                         @global-color;
+@nav-side-divider-border:                       @global-border;
+@nav-side-nested-color:                         @global-link-color;
+@nav-side-nested-hover-color:                   @global-link-hover-color;
+
+@nav-dropdown-color:                            @global-color;
+@nav-dropdown-hover-background:                 @global-primary-background;
+@nav-dropdown-hover-color:                      @global-contrast-color;
+@nav-dropdown-header-color:                     @global-muted-color;
+@nav-dropdown-divider-border:                   @global-border;
+@nav-dropdown-nested-color:                     @global-link-color;
+@nav-dropdown-nested-hover-color:               @global-link-hover-color;
+
+@nav-navbar-color:                              #fff;
+@nav-navbar-hover-background:                   rgba(0,0,0,0);
+@nav-navbar-hover-color:                        #ff9790;
+@nav-navbar-header-color:                       #FFF;
+@nav-navbar-divider-border:                     #FFF;
+@nav-navbar-nested-color:                       #FFF;
+@nav-navbar-nested-hover-color:                 #F1F1F1;
+
+@nav-offcanvas-color:                           @offcanvas-panel-link-color;
+@nav-offcanvas-hover-background:                lighten(@offcanvas-bar-background, 5%);
+@nav-offcanvas-hover-color:                     @offcanvas-panel-link-hover-color;
+@nav-offcanvas-active-background:               darken(@offcanvas-bar-background, 10%);
+@nav-offcanvas-active-color:                    @offcanvas-panel-link-hover-color;
+@nav-offcanvas-header-color:                    @offcanvas-panel-color;
+@nav-offcanvas-divider-border:                  darken(@offcanvas-bar-background, 10%);
+@nav-offcanvas-nested-color:                    @offcanvas-panel-link-color;
+@nav-offcanvas-nested-hover-color:              @offcanvas-panel-link-hover-color;
+
+@nav-sub-active-color:                          #444;
+// Sub-object: `uk-nav-divider`
+// ========================================================================
+
+.hook-nav-divider() {}
+
+
+// Sub-object: `uk-nav-sub`
+// ========================================================================
+
+.hook-nav-sub() {}
+
+
+// Modifier: `uk-nav-parent-icon`
+// ========================================================================
+
+.hook-nav-parent-icon() {}
+
+
+// Modifier `uk-nav-side`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-side() {
+	border-radius: @global-border-radius;
+	.transition();
+}
+
+// Hover
+.hook-nav-side-hover() {}
+
+// Active
+.hook-nav-side-active() {
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.2);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-side-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-side-divider() {}
+
+
+// Modifier `uk-nav-dropdown`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-dropdown() {}
+
+// Hover
+.hook-nav-dropdown-hover() {
+	box-shadow: inset 0 2px 4px rgba(0,0,0,.2);
+	text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-dropdown-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-dropdown-divider() {}
+
+
+// Modifier `uk-nav-navbar`
+// ========================================================================
+
+//
+// Items
+//
+
+.hook-nav-navbar() {
+	padding: 5px 20px 5px 35px;
+	position: relative;
+	&:before {
+		content: '-';
+		display: block;
+		position: absolute;
+		left: 22px;
+		top: 5px;
+	}
+}
+
+// Hover
+.hook-nav-navbar-hover() {
+	text-decoration: underline;
+}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-navbar-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-navbar-divider() {}
+
+
+// Modifier `uk-nav-offcanvas`
+// ========================================================================
+
+.hook-nav-offcanvas-link() {}
+
+.hook-nav-offcanvas-link-hover() {}
+
+//
+// Items
+//
+
+.hook-nav-offcanvas() {}
+
+// Hover
+.hook-nav-offcanvas-hover() {}
+
+// Active
+.hook-nav-offcanvas-active() {}
+
+//
+// Sub-object: `uk-nav-header`
+//
+
+.hook-nav-offcanvas-header() {}
+
+//
+// Sub-object: `uk-nav-divider`
+//
+
+.hook-nav-offcanvas-divider() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-nav-misc() {
+	.uk-nav-sub > li.uk-active  > a,
+	.uk-nav-sub > li.uk-active  > a:focus,
+	.uk-nav-sub > li.uk-active > a:hover {
+		color : @nav-sub-active-color;
+	}
+	.uk-nav-navbar > li.uk-active > a,
+	.uk-nav-navbar > li.uk-active > a:hover,
+	.uk-nav-navbar > li.uk-active > a:focus {
+		color: @nav-navbar-hover-color;
+		text-decoration: underline;
+	}
+}

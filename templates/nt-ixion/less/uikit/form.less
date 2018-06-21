@@ -1,0 +1,95 @@
+//
+// Component: Form
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@form-height:                                   35px;
+@form-padding:                                  4px 10px;
+@form-small-padding:                            3px 10px;
+@form-large-padding:                            8px 10px;
+
+@form-border:                                   @global-border;
+@form-background:                               #fff;
+@form-color:                                    @global-color;
+
+@form-focus-color:                              @global-color;
+
+@form-disabled-border:                          @global-border;
+@form-disabled-color:                           @global-muted-color;
+
+@form-placeholder-color:                        @global-muted-color;
+
+@form-gutter:                                   @global-margin;
+
+@form-legend-border:                            @global-border;
+@form-legend-font-size:                         round(@global-font-size * 1.28); // 18px
+@form-legend-line-height:                       35px;
+
+@form-small-height:                             28px;
+@form-large-height:                             45px;
+@form-small-font-size:                          round(@global-font-size * 0.85); // 12px
+@form-large-font-size:                          round(@global-font-size * 1.14); // 16px
+
+@form-blank-border:                             @global-border;
+
+@form-icon-font-size:                           @global-font-size;
+@form-icon-color:                               @global-muted-color;
+
+
+// Component
+// ========================================================================
+
+.hook-form() {
+	border-radius: @global-border-radius;
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.075);
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.075);
+}
+
+// Focus state
+.hook-form-focus() {}
+
+// Disabled state
+.hook-form-disabled() {}
+
+// Legend
+.hook-form-legend() {}
+
+
+// Validation states
+// ========================================================================
+
+//
+// Error state
+//
+
+.hook-form-danger() {}
+
+//
+// Success state
+//
+
+.hook-form-success() {}
+
+
+// Style modifiers
+// ========================================================================
+
+.hook-form-blank() {
+	-webkit-box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+	box-shadow: 0 0 0 rgba(0,0,0,0) !important;
+}
+.hook-form-blank-focus() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-form-misc() {
+	.uk-form {
+		border: 0;
+	}
+}

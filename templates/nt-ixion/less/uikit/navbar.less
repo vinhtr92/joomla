@@ -1,0 +1,100 @@
+//
+// Component: Navbar
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@navbar-background:                             rgba(0,0,0,0);
+@navbar-color:                                  #fff;
+@navbar-link-color:                             #898989;
+@navbar-link-hover-color:                       #000;
+
+@navbar-nav-margin-top:                         9px;
+@navbar-nav-height:                             40px;
+@navbar-nav-line-height:                        @navbar-nav-height;
+@navbar-nav-padding-horizontal:                 19px;
+@navbar-nav-color:                              #787878;
+@navbar-nav-font-size:                          16px;
+@navbar-nav-font-weight:                        700;
+@navbar-nav-font-family:                        @base-body-font-family;
+@navbar-nav-hover-background:                   rgba(0,0,0,0);
+@navbar-nav-hover-color:                        #000000;
+@navbar-nav-onclick-background:                 rgba(0,0,0,0);
+@navbar-nav-onclick-color:                      #000000;
+@navbar-nav-active-background:                  rgba(0,0,0,0);
+@navbar-nav-active-color:                       #000000;
+@navbar-nav-subtitle-font-size:                 10px;
+@navbar-nav-subtitle-offset:                    2px;
+
+@navbar-brand-font-size:                        round((@global-font-size * 1.28)); // 18px
+@navbar-brand-color:                            @global-color;
+@navbar-brand-hover-color:                      @global-color;
+
+@navbar-toggle-font-size:                       round((@global-font-size * 1.28)); // 18px
+@navbar-toggle-color:                           @global-color;
+@navbar-toggle-hover-color:                     @global-color;
+
+
+// Component
+// ========================================================================
+
+.hook-navbar() {}
+
+
+// Sub-object: `uk-navbar-nav` .uk-navbar-nav > li > a
+// ========================================================================
+
+.hook-navbar-nav() {
+	-webkit-transition: color linear 0.15s, background ease 0.2s, box-shadow linear 0.2s;
+	transition: color linear 0.15s, background ease 0.2s, box-shadow linear 0.2s;
+	text-shadow: 0 1px 0 rgba(255,255,255,.75);
+	border-radius: @global-border-radius;
+	.box-shadow(~"0px 1px 3px rgba(0, 0, 0, 0) inset");
+}
+
+// Hover
+.hook-navbar-nav-hover() {}
+
+// OnClick
+.hook-navbar-nav-onclick() {}
+
+// Active
+.hook-navbar-nav-active() { }
+
+
+// Sub-object: `uk-navbar-content`
+// ========================================================================
+
+.hook-navbar-content() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-navbar-misc() {
+	.uk-navbar-nav {
+		margin-top: @navbar-nav-margin-top;
+		margin-left: @navbar-nav-padding-horizontal;
+	}
+
+	.uk-navbar-nav > li {
+		margin: 0 5px;
+	}
+
+	.uk-navbar-nav > li.uk-parent.uk-open > a {
+		color: #F7F7F7;
+		text-shadow: 0 1px 0 rgba(0,0,0,.75);
+		.box-shadow(~"0px 3px 6px rgba(0, 0, 0, 0.65) inset");
+		background: @dropdown-navbar-background;
+	}
+
+	.uk-navbar-logo,
+	.uk-navbar-search {
+		float: left;
+		line-height: @theme_global-header-height;
+		height: @theme_global-header-height;
+	}
+}

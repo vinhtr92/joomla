@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900|Roboto');
+body {
+  font-weight: normal;
+}
+.nav-custom > li > a {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+	padding-right: 30px;
+	text-transform: uppercase;
+	font-family: roboto;
+
+
+	margin-top: 2px;
+	margin-bottom: 2px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+
+
+
+
+h3.hero__title {
+	font-size: 2.5rem;
+	line-height: 1;
+	text-align: center
+}
+
+.box .box__title {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: "Playfair Display";
+}
+
+.features {
+	padding: 3rem 0
+}
+
+.features .features {
+	padding: 0;
+}
+
+.features .container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.footer .footer-menu{
+	text-align: center;
+}
+
+
+
+.footer ul {
+	margin: 0; 
+	padding: 0;
+}
+
+.footer li {
+	list-style-type: none;
+}
+
+.custom-footer .container {
+	padding: 2rem 0;
+}
+
+.custom-footer .box__desc {
+	font-size: 0.75rem;
+}
+
+@media (min-width: 576px) { 
+
+.footer .footer-menu{
+	text-align: left;
+}
+
+}

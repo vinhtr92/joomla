@@ -1,0 +1,41 @@
+//
+// Component: Thumbnail
+//
+// ========================================================================
+
+
+// Variables
+// ========================================================================
+
+@thumbnail-border:                              @global-border;
+@thumbnail-background:                          @global-background;
+@thumbnail-hover-border:                        darken(@global-border, 20%);
+@thumbnail-hover-background:                    @global-background;
+@thumbnail-box-shadow-color:                    rgba(0,0,0,.15);
+
+@thumbnail-caption-color:                       @global-color;
+
+
+// Component
+// ========================================================================
+
+.hook-thumbnail() {
+	border-radius: @global-border-radius;
+	box-shadow: 0 1px 3px @thumbnail-box-shadow-color;
+}
+
+.hook-thumbnail-hover() {
+	box-shadow: 0 1px 6px @thumbnail-box-shadow-color;
+}
+
+
+// Caption
+// ========================================================================
+
+.hook-thumbnail-caption() {}
+
+
+// Miscellaneous
+// ========================================================================
+
+.hook-thumbnail-misc() {}
