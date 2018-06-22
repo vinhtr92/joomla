@@ -94,6 +94,14 @@ JHtml::_('bootstrap.loadCss', false, $this->direction);
 // Adjusting content width
 $position7ModuleCount = $this->countModules('position-7');
 $position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+$position8ModuleCount = $this->countModules('position-8');
+
+
 
 if ($position7ModuleCount && $position8ModuleCount)
 {
@@ -142,6 +150,23 @@ else
 ?>">
 	<!-- Body -->
 	<div class="body" id="top">
+		<section class="top-menu">
+		<div class="container">
+			<div class="row-fluid">
+				<div class="span4">
+					<jdoc:include type="modules" name="topmenu-1" style="none" />
+				</div>
+				<div class="span4">
+					<jdoc:include type="modules" name="topmenu-2" style="none" />
+				</div>
+				<div class="span4">
+					<jdoc:include type="modules" name="topmenu-3" style="none" />
+				</div>
+				
+
+			</div>
+		</div>
+		</section>
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
@@ -175,24 +200,88 @@ else
 				</nav>
 			<?php endif; ?>
 			<jdoc:include type="modules" name="banner" style="xhtml" />
-			<div class="row-fluid">
-				<jdoc:include type="modules" name="position-4" style="none" />
+<!-- 			<section class="hero">
+				<div class="row-fluid">
+					<jdoc:include type="modules" name="position-4" style="none" />
+	
+				</div>	
+			</section> -->
 
-			</div>	
+			<?php if ($this->countModules( 'hero' )) : ?>
+			<section class="hero">
+				<jdoc:include type="modules" name="hero" style="none" />
+			</section>
+			<?php endif; ?>
 
-			<div class="row-fluid">
-				<!-- <jdoc:include type="modules" name="position-5" style="none" />
-				<jdoc:include type="modules" name="position-6" style="none" /> -->
-				<div class="span4">
-					<jdoc:include type="modules" name="feature-1" style="none" />
+
+<!-- <section class="top-menu">
+	
+				<div class="row-fluid">
+			
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-1" style="none" />
+					</div>
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-2" style="none" />
+					</div>
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-3" style="none" />
+					</div>
 				</div>
-				<div class="span4">
-					<jdoc:include type="modules" name="feature-2" style="none" />
+</section>  -->
+
+			<?php if ($this->countModules( 'feature-1 or feature-2 or feature-3' ) ) : ?>
+			<section class="top-banner">
+				<div class="row-fluid">
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-1" style="none" />
+					</div>
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-2" style="none" />
+					</div>
+					<div class="span4">
+						<jdoc:include type="modules" name="feature-3" style="none" />
+					</div>
 				</div>
-				<div class="span4">
-					<jdoc:include type="modules" name="feature-3" style="none" />
-				</div>
+			</section>
+			<?php endif; ?>
+
+
+			<!-- <div class="row-fluid">
+				<jdoc:include type="modules" name="position-5" style="none" />
 			</div>
+			<div class="row-fluid">
+				<jdoc:include type="modules" name="position-6" style="none" />
+			</div> -->
+			<?php if ($this->countModules( 'press-1 or press-2' ) ) : ?>
+			<section class="press">
+				<div class="row-fluid">
+					<div class="span6">
+						<jdoc:include type="modules" name="press-1" style="none" />
+					</div>
+	
+					<div class="span6">
+						<jdoc:include type="modules" name="press-2" style="none" />
+					</div>
+				</div>
+			</section>
+			<?php endif; ?>
+
+			<?php if ($this->countModules( 'press-3 or press-4' ) ) : ?>
+			<section class="press-2">
+				<div class="row-fluid">
+					<div class="span6">
+						<jdoc:include type="modules" name="press-3" style="none" />
+					</div>
+	
+					<div class="span6">
+						<jdoc:include type="modules" name="press-4" style="none" />
+					</div>
+				</div>
+			</section>
+			<?php endif; ?>
+
+
 			<div class="row-fluid">
 				<?php if ($position8ModuleCount) : ?>
 					<!-- Begin Sidebar -->
@@ -204,6 +293,7 @@ else
 					<!-- End Sidebar -->
 				<?php endif; ?>
 				<main id="content" role="main" class="<?php echo $span; ?>">
+					<!-- $span phụ thuộc trạng thái của position 7 và 8 -->
 					<!-- Begin Content -->
 					<jdoc:include type="modules" name="position-3" style="xhtml" />
 					<jdoc:include type="message" />
@@ -225,20 +315,23 @@ else
 	<!-- Footer -->
 	<footer class="footer" role="contentinfo">
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<?php if ($this->countModules( 'footer-1 or footer-2 or footer-3 or footer-4' ) ) : ?>
 			<div class="row">
-			<div class="span3">
-				<jdoc:include type="modules" name="footer-1" style="none" />
+				<div class="span3">
+					<jdoc:include type="modules" name="footer-1" style="none" />
+				</div>
+				<div class="span3">
+					<jdoc:include type="modules" name="footer-2" style="none" />
+				</div>
+				<div class="span3">
+					<jdoc:include type="modules" name="footer-3" style="none" />
+				</div>
+				<div class="span3">
+					<jdoc:include type="modules" name="footer-4" style="none" />
+				</div>
 			</div>
-			<div class="span3">
-				<jdoc:include type="modules" name="footer-2" style="none" />
-			</div>
-			<div class="span3">
-				<jdoc:include type="modules" name="footer-3" style="none" />
-			</div>
-			<div class="span3">
-				<jdoc:include type="modules" name="footer-4" style="none" />
-			</div>
-			</div>
+		<?php endif; ?>
+
 		</div>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
