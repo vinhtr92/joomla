@@ -10,13 +10,16 @@
 defined('_JEXEC') or die;
 ?>
 <?php if ($params->get('item_title')) : ?>
-	<?php $item_heading = $params->get('item_heading', 'h4'); ?>
+	<?php $item_heading = $params->get('item_heading', 'h4','heading_bottom'); ?>
 	<<?php echo $item_heading; ?> class="newsflash-title<?php echo $params->get('moduleclass_sfx'); ?>">
+	
+	
+	
 	<?php if ($item->link !== '' && $params->get('link_titles')) : ?>
 		<a href="<?php echo $item->link; ?>">
 			<?php echo $item->title; ?>
 		</a>
-	<?php else : ?>
+	<?php elseif(!$params->get('heading_bottom','1')) : ?>
 		<?php echo $item->title; ?>
 	<?php endif; ?>
 	</<?php echo $item_heading; ?>>
@@ -32,12 +35,27 @@ defined('_JEXEC') or die;
 	<?php echo $item->introtext; ?>
 <?php endif; ?>
 
-<?php if ($params->get('heading_bottom', '1')) : ?>
-	<?php echo 'work' ?>
-<?php endif; ?>
+
 
 <?php echo $item->afterDisplayContent; ?>
 
 <?php if (isset($item->link) && $item->readmore != 0 && $params->get('readmore')) : ?>
 	<?php echo '<a class="readmore" href="' . $item->link . '">' . $item->linkText . '</a>'; ?>
+<?php endif; ?>
+
+<?php if ($params->get('item_title')) : ?>
+	<?php $item_heading = $params->get('item_heading', 'h4','heading_bottom'); ?>
+	<<?php echo $item_heading; ?> class="newsflash-title<?php echo $params->get('moduleclass_sfx'); ?>">
+
+
+
+
+	<?php if ($item->link !== '' && $params->get('link_titles')) : ?>
+		<a href="<?php echo $item->link; ?>">
+			<?php echo $item->title; ?>
+		</a>
+	<?php elseif($params->get('heading_bottom','1')) : ?>
+		<?php echo $item->title; ?>
+	<?php endif; ?>
+	</<?php echo $item_heading; ?>>
 <?php endif; ?>

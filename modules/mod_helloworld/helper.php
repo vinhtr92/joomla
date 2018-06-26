@@ -1,24 +1,32 @@
 <?php
 /**
- * @package     Joomla.Site
- * @subpackage  mod_articles_news
- *
- * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * Helper class for Hello World! module
+ * 
+ * @package    Joomla.Tutorials
+ * @subpackage Modules
+ * @link http://docs.joomla.org/J3.x:Creating_a_simple_module/Developing_a_Basic_Module
+ * @license        GNU/GPL, see LICENSE.php
+ * mod_helloworld is free software. This version may have been modified pursuant
+ * to the GNU General Public License, and as distributed it includes or
+ * is derivative of works licensed under the GNU General Public License or
+ * other free or open source software licenses.
  */
+// class ModHelloWorldHelper
+// {
+//     /**
+//      * Retrieves the hello message
+//      *
+//      * @param   array  $params An object containing the module parameters
+//      *
+//      * @access public
+//      */    
+//     public static function getHello($params)
+//     {
+//         return 'Hello, World!';
+//     }
+// }
 
-defined('_JEXEC') or die;
-
-JLoader::register('ContentHelperRoute', JPATH_SITE . '/components/com_content/helpers/route.php');
-
-JModelLegacy::addIncludePath(JPATH_SITE . '/components/com_content/models', 'ContentModel');
-
-/**
- * Helper for mod_articles_news
- *
- * @since  1.6
- */
-abstract class ModArticlesNewsHelper
+abstract class modHelloWorldHelper
 {
 	/**
 	 * Get a list of the latest articles from the article model
@@ -171,6 +179,7 @@ abstract class ModArticlesNewsHelper
 			// tùy chọn cho từng bài viết mới nhất trong danh sách.
 		}
 
-		return $items;
-	}
+        return $items;
+        
+    }
 }

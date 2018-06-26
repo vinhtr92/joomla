@@ -13,6 +13,8 @@ defined('_JEXEC') or die;
 JLoader::register('ModArticlesNewsHelper', __DIR__ . '/helper.php');
 
 $list            = ModArticlesNewsHelper::getList($params);
+// trả về danh sách các bài viết mới nhất, là kết quả của truy xuất phương thức getList thuộc đối tượng ModArticlesNewsHelper
+
 $moduleclass_sfx = htmlspecialchars($params->get('moduleclass_sfx'), ENT_COMPAT, 'UTF-8');
 
-require JModuleHelper::getLayoutPath('mod_articles_news', $params->get('layout', 'horizontal'));
+require JModuleHelper::getLayoutPath('mod_helloworld', $params->get('layout', 'horizontal'));
